@@ -5,24 +5,24 @@
   <title>Product Inventory</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col items-center p-8">
+<body class="bg-orange-50 min-h-screen flex flex-col items-center p-8">
 
-<div class="w-full max-w-5xl bg-white shadow-md rounded-lg p-6">
-  <div class="flex justify-between items-center mb-4">
-    <h1 class="text-2xl font-semibold text-gray-700">Product Inventory</h1>
-    <button onclick="openCreateModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Product</button>
+<div class="w-full max-w-5xl bg-white shadow-lg rounded-xl p-6">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Product Inventory</h1>
+    <button onclick="openCreateModal()" class="bg-orange-500 text-white px-5 py-2 rounded-lg shadow hover:bg-orange-600 transition">Add Product</button>
   </div>
 
-  <table class="w-full border-collapse">
-    <thead class="bg-gray-200">
+  <table class="w-full border-collapse text-gray-700">
+    <thead class="bg-orange-100">
       <tr>
-        <th class="p-2 border">No.</th>
-        <th class="p-2 border">Name</th>
-        <th class="p-2 border">Description</th>
-        <th class="p-2 border">Stock</th>
-        <th class="p-2 border">Unit</th>
-        <th class="p-2 border">Price</th>
-        <th class="p-2 border">Actions</th>
+        <th class="p-3 border">No.</th>
+        <th class="p-3 border">Name</th>
+        <th class="p-3 border">Description</th>
+        <th class="p-3 border">Stock</th>
+        <th class="p-3 border">Unit</th>
+        <th class="p-3 border">Price</th>
+        <th class="p-3 border">Actions</th>
       </tr>
     </thead>
     <tbody id="productTableBody"></tbody>
@@ -30,40 +30,40 @@
 </div>
 
 <!-- Modal -->
-<div id="productModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-  <div class="bg-white rounded-lg w-96 p-6">
-    <h2 id="modalTitle" class="text-xl font-semibold mb-4"></h2>
+<div id="productModal" class="hidden fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+  <div class="bg-white rounded-xl w-96 p-6 shadow-lg">
+    <h2 id="modalTitle" class="text-2xl font-semibold mb-5 text-gray-800"></h2>
     <form id="productForm" onsubmit="saveProduct(event)">
       <input type="hidden" id="productId">
 
-      <div class="mb-2">
-        <label class="block text-gray-700">Name</label>
-        <input id="productName" class="border p-2 w-full rounded" required>
+      <div class="mb-3">
+        <label class="block text-gray-700 font-medium">Name</label>
+        <input id="productName" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" required>
       </div>
 
-      <div class="mb-2">
-        <label class="block text-gray-700">Description</label>
-        <input id="productDescription" class="border p-2 w-full rounded" required>
+      <div class="mb-3">
+        <label class="block text-gray-700 font-medium">Description</label>
+        <input id="productDescription" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" required>
       </div>
 
-      <div class="mb-2">
-        <label class="block text-gray-700">Stock</label>
-        <input id="productStock" type="number" min="1" class="border p-2 w-full rounded" required>
+      <div class="mb-3">
+        <label class="block text-gray-700 font-medium">Stock</label>
+        <input id="productStock" type="number" min="1" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" required>
       </div>
 
-      <div class="mb-2">
-        <label class="block text-gray-700">Unit</label>
-        <input id="productUnit" class="border p-2 w-full rounded" required>
+      <div class="mb-3">
+        <label class="block text-gray-700 font-medium">Unit</label>
+        <input id="productUnit" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" required>
       </div>
 
-      <div class="mb-2">
-        <label class="block text-gray-700">Price</label>
-        <input id="productPrice" type="number" step="0.01" min="1" class="border p-2 w-full rounded" required>
+      <div class="mb-3">
+        <label class="block text-gray-700 font-medium">Price</label>
+        <input id="productPrice" type="number" step="0.01" min="1" class="border border-gray-300 p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" required>
       </div>
 
-      <div class="flex justify-end mt-4 space-x-2">
-        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save</button>
+      <div class="flex justify-end mt-5 space-x-3">
+        <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition">Cancel</button>
+        <button type="submit" class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">Save</button>
       </div>
     </form>
   </div>
