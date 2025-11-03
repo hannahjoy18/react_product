@@ -2,7 +2,6 @@ const apiBase = "http://localhost:9000/api/products";
 
 document.addEventListener("DOMContentLoaded", fetchProducts);
 
-// Fetch all products
 function fetchProducts() {
   fetch(apiBase)
     .then(res => res.json())
@@ -32,7 +31,6 @@ function fetchProducts() {
     .catch(err => console.error("Error fetching products:", err));
 }
 
-// Open modal for creating
 function openCreateModal() {
   document.getElementById("productForm").reset();
   document.getElementById("productId").value = "";
@@ -40,7 +38,6 @@ function openCreateModal() {
   document.getElementById("productModal").classList.remove("hidden");
 }
 
-// Open modal for editing
 function openEditModal(id, name, description, stock, unit, price) {
   document.getElementById("productId").value = id;
   document.getElementById("productName").value = name;
@@ -52,12 +49,10 @@ function openEditModal(id, name, description, stock, unit, price) {
   document.getElementById("productModal").classList.remove("hidden");
 }
 
-// Close modal
 function closeModal() {
   document.getElementById("productModal").classList.add("hidden");
 }
 
-// Save product (POST or PUT)
 function saveProduct(e) {
   e.preventDefault();
 
@@ -90,7 +85,6 @@ function saveProduct(e) {
     .catch(err => console.error("Error saving product:", err));
 }
 
-// Delete product
 function deleteProduct(id) {
   if (!confirm("Delete this product?")) return;
 
